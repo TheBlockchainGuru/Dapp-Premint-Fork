@@ -8,6 +8,8 @@ import {
     Typography,
 } from '@mui/material';
 import FullList from './FullList';
+import BulkUpdate from './BulkUpdate';
+import RemoveBot from './RemoveBot';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import SystemUpdateAltOutlinedIcon from '@mui/icons-material/SystemUpdateAltOutlined';
@@ -129,10 +131,10 @@ export default function Entry () {
                     <FullList />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    
+                    <BulkUpdate />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    
+                    <RemoveBot />
                 </TabPanel>
             </Box>
         </Box>
