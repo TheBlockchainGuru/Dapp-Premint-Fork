@@ -128,6 +128,49 @@ export default function ProjectInfo () {
                         </Stack>
                     </Stack>
                 </Stack>
+                <Stack>
+                    <Typography>LOREM Registration Access</Typography>
+                    <Typography>
+                        Place one address per line. 
+                        We recommend adding 100 no more than at a time.
+                    </Typography>
+                    <Stack flexDirection="row" gap={4}
+                        sx={{
+                            py: 4,
+                            px: 3,
+                            boxShadow: '0px 17px 26px -9px #E2E8F0',
+                            borderRadius: 1,
+                            bgcolor: '#fff'
+                        }}
+                    >
+                        <Stack flex={1}>
+                            <Typography>Registration Start date</Typography>
+                            <OutlinedInput size='small' />
+                            <Stack>
+                                <Typography>(GMT+0600) Asia/Dhaka</Typography>
+                                <Typography>When should people be able to join your list?</Typography>
+                            </Stack>
+                        </Stack>
+                        <Stack flex={1}>
+                            <Typography>Registration end date</Typography>
+                            <OutlinedInput 
+                                size='small'
+                            />
+                            <Stack>
+                                <Typography>(GMT+0600) Asia/Dhaka</Typography>
+                                <Typography>When should people be able to join your list?</Typography>
+                            </Stack>
+                        </Stack>
+                        <Stack flex={1}>
+                            <Typography>Close registration once it hits this many entries:</Typography>
+                            <OutlinedInput
+                                small='size'
+                                placeholder='Close registration once it hits this many entries'
+                            />
+                            <Typography>Leave this blank for unlimited</Typography>
+                        </Stack>
+                    </Stack>
+                </Stack>
             </Stack>
         </Box>
     );
