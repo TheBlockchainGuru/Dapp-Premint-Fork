@@ -7,6 +7,7 @@ import {
     OutlinedInput
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
 export default function ProjectInfo () {
     const theme = useTheme();
