@@ -22,13 +22,14 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import LocalSeeIcon from '@mui/icons-material/LocalSee';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Sidebar({open, handleDrawerClose}) {
     const theme = useTheme();
     const matchUpMd = useMediaQuery(theme.breakpoints.up('md'));
-    const [user, setUser] = React.useState(1);
+    const { pathname } =  useLocation();
 
+    const [user, setUser] = React.useState(1);
     const [navOpen, setOpen] = React.useState(true);
 
     const handleClick = () => {
@@ -70,9 +71,9 @@ export default function Sidebar({open, handleDrawerClose}) {
                         <Link to={tab.href} style={{ textDecoration: 'none', color: 'inherit' }} key={index}>
                             <ListItemButton key={index} sx={{ py: 1.5, borderTopLeftRadius: index == 0? 8 : 0, borderTopRightRadius: index == 0? 8: 0 }}>
                                 <ListItemIcon sx={{ minWidth: 48}}>
-                                    {<tab.icon sx={{ color: index == 0 ? '#BB86FC' : 'inherit'}} />}
+                                    {<tab.icon sx={{ color: tab.href === '/' ? (pathname === '/' ? '#BB86FC' : 'inherit') : (pathname.toLowerCase().includes(tab.href) ? '#BB86FC' : 'inherit') }} />}
                                 </ListItemIcon>
-                                <Typography variant="h6" sx={{ color: index == 0 ? '#BB86FC' : 'inherit'}}>{tab.title}</Typography>
+                                <Typography variant="h6" sx={{ color: tab.href === '/' ? (pathname === '/' ? '#BB86FC' : 'inherit') : (pathname.toLowerCase().includes(tab.href) ? '#BB86FC' : 'inherit') }}>{tab.title}</Typography>
                             </ListItemButton>
                         </Link>
                     )}
