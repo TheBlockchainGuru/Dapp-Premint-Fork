@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import NftCard from '../../components/cards/NftCard';
+import { Link } from 'react-router-dom';
 
 const cards = [
     {image: '/images/projects/1.png', title: 'OSYC Project', entry: 125 },
@@ -20,11 +21,15 @@ export default function Project () {
                 justifyContent="space-between"
             >
                 <Typography>These are all the project you've created on FANTOM.</Typography>
-                <Button
-                    variant="contained"
-                    startIcon={<AddIcon />}
-                    sx={{ bgcolor: '#BB86FC' }}
-                >Create new project</Button>
+                <Link to="/project/create" style={{ textDecoration: 'none' }}>
+                    <Button
+                        variant="contained"
+                        startIcon={<AddIcon />}
+                        sx={{ bgcolor: '#BB86FC' }}
+                    >
+                        Create new project
+                    </Button>
+                </Link>
             </Stack>
             <Stack flexDirection="row" alignItems="center" sx={{ pt: 4 }} gap={3}>
             {cards.map((element, key) => 

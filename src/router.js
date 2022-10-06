@@ -3,6 +3,7 @@ import Layout from "./layouts";
 import Entry from "./pages/Entry";
 import Home from "./pages/Home";
 import Project from "./pages/Project";
+import ProjectCreate from "./pages/Project/Create";
 import Raffle from "./pages/Raffle";
 import Setting from "./pages/Setting";
 import Collab from "./pages/Collab";
@@ -17,6 +18,7 @@ export default function Router () {
             children: [
                 { path: "/", element: <Home /> },
                 { path: "/project", element: <Project /> },
+                { path: "/project/create", element: <ProjectCreate /> },
                 { path: "/entry", element: <Entry /> },
                 { path: "/raffle", element: <Raffle /> },
                 { path: "/setting", element: <Setting />},
